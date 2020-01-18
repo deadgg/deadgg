@@ -1,0 +1,38 @@
+extends layout
+
+block meta
+    meta(property="og:title" content="Join the Dead")
+    title Join the Dead
+    
+block content-header
+block content
+    .row
+    .row
+        .dark-background.valign-wrapper.banner
+            img(src="images/logo-200.png")
+    .row
+        .dark-background.center
+            h1= __("header.homeTitle")
+            p
+            | We are an independent team of developers working on a game that is due to be released on <a href="https://steamcommunity.com">Steam</a> before 2021 and were founded in 2019 as a partnership between <a href="https://keybase.io/zaekona">@zaekona</a> and <a href="https://keybase.io/kurozael">@kurozael</a>
+            p
+                b Join the community today to stay up to date with the progress of our game
+            .social-list
+                a.social(href="https://steamcommunity.com/groups/officialdeadgg")
+                    i.fab.fa-steam
+                a.social(href="https://join.dead.gg")
+                    i.fab.fa-discord
+                a.social(href="https://github.com/deadgg")
+                    i.fab.fa-github
+                a.social(href="https://reddit.com/u/deadgg")
+                    i.fab.fa-reddit
+                a.social(href="https://youtube.com/channel/UCXlzX7-f5PPQQ1DF7peQcWw")
+                    i.fab.fa-youtube
+                a.social(href="https://facebook.com/officialdeadgg")
+                    i.fab.fa-facebook
+                a.social(href="https://twitter.com/officialdeadgg")
+                    i.fab.fa-twitter
+                a.social(href="https://vk.com/officialdeadgg")
+                    i.fab.fa-vk
+            div.discord-widget
+                widgetbot(server="652099315829047329" channel="652121742235402271" width="100%" height="100%" shard="https://disweb.dashflo.net")

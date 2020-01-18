@@ -1,0 +1,113 @@
+doctype html
+html(lang=__("lang"))
+    head
+        block meta
+        
+        link(rel="stylesheet" href="/css/jquery-ui.min.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css")
+
+        script(type="text/javascript" src="/js/jquery-3.2.1.min.js")
+        script(type="text/javascript" src="/js/jquery-ui.js")
+        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+        script(type="text/javascript" src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed")
+        script(src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async="" defer="").
+            new Crate({
+                server: "652099315829047329",
+                channel: "652121742235402271",
+                shard: "https://disweb.dashflo.net"
+            })
+
+        link(rel="stylesheet" href="/css/style.css")
+        link(rel="icon" href="favicon.png" sizes="16x16 32x32 48x48" type="image/png")
+
+        meta(property="og:type" content="website")
+        meta(property="og:url" content="https://dead.gg")
+        meta(property="og:image" content="https://dead.gg/images/logo-512.png")
+        meta(property="og:description" content="The official community for dead.gg games")
+
+        meta(name="description" content="The official community for dead.gg games")
+        meta(name="keywords" content="Gaming,Gamers,Gaming Community,Game Development")
+        meta(name="author" content="zaekona")
+
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        
+    body
+        header
+            nav
+                .nav-wrapper
+                    a.sidenav-trigger(href="#" data-target="hamburger")
+                        i.material-icons menu
+                    ul.left.hide-on-med-and-down
+                        li
+                            a(href="/")
+                                i.fa.fa-hashtag.tiny.left
+                                span= __("nav.home")
+                        li
+                            a(href="/games")
+                                i.fa.fa-gamepad.tiny.left
+                                span= __("nav.games")
+                        li
+                            a(href="/about")
+                                i.fa.fa-info.tiny.left
+                                span= __("nav.about")
+                        li
+                            a(href="/contact")
+                                i.fa.fa-envelope.tiny.left
+                                span= __("nav.contact")
+                    ul.right
+                        if (!user)
+                            li
+                                a(href="/login").login
+                                    i.fab.fa-discord.small.left
+                                    span= __("nav.login")
+                        else
+                            li
+                                a(href="/logout")
+                                    i.fa.fa-sign-out-alt.tiny.left
+                                    span= __("nav.logout")
+
+            ul#hamburger.sidenav
+                li
+                    a(href="/")
+                        .icon-container.left
+                            i.fa.fa-hashtag.icon
+                        span= __("nav.home")
+                li
+                    a(href="/games")
+                        .icon-container.left
+                            i.fa.fa-gamepad.icon
+                        span= __("nav.games")
+                li
+                    a(href="/about")
+                        .icon-container.left
+                            i.fa.fa-info.icon
+                        span= __("nav.about")
+                li
+                    a(href="/contact")
+                        .icon-container.left
+                            i.fa.fa-envelope.icon
+                        span= __("nav.contact")
+        main
+            div.container
+                block content-header
+                block content
+        footer.dark-footer
+            | Copyright &copy; <a href="https://dead.gg">dead.gg</a>
+
+    script.
+        $(document).ready(function(){
+            const error = "#{error}";
+            const success = "#{success}";
+
+            if (error) {
+                M.toast({html: error, classes: "red center"});
+            }
+
+            if (success) {
+                M.toast({html: success, classes: "green center"});
+            }
+
+            $(".sidenav").sidenav();
+        });

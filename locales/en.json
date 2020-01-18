@@ -1,0 +1,13 @@
+{
+    "lang": "en",
+    "header.homeTitle": "Join the Dead",
+    "header.aboutTitle": "About the Dead",
+    "header.contactTitle": "Contact the Dead",
+    "header.games.soonDead": "Soon Dead",
+    "nav.home": "Home",
+    "nav.games": "Games",
+    "nav.about": "About",
+    "nav.contact": "Contact",
+    "nav.logout": "Log Out",
+    "nav.login": "Log In With Discord"
+}
