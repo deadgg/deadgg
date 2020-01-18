@@ -20,6 +20,7 @@ class MainController {
         this._router.get("/logout", this.getRouteLogout.bind(this));
         this._router.get("/login", this.getRouteLogin.bind(this));
         this._router.get("/games", this.getRouteGames.bind(this));
+        this._router.get("/assets", this.getRouteAssets.bind(this));
         this._router.get("/about", this.getRouteAbout.bind(this));
         this._router.get("/contact", this.getRouteContact.bind(this));
         this._router.get("/discord/callback", this.getDiscordCallback.bind(this));
@@ -39,6 +40,23 @@ class MainController {
                 }).exec();
             }
         }
+    }
+
+    private async getRouteAssets(req: Request, res: Response): Promise<void> {
+        const user = await this.validateSession(req);
+
+        const success = req.session.success;
+        const error = req.session.error;
+
+        req.session.success = undefined;
+        req.session.error = undefined;
+
+        res.render("assets", {
+            locale: req.i18n.getLocale(),
+            success: success,
+            error: error,
+            user: user
+        });
     }
 
     private async getRouteGames(req: Request, res: Response): Promise<void> {
