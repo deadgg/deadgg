@@ -45,6 +45,10 @@ class Server {
 
         this._app.use("/", controller.router);
 
+		this._app.use(function(req, res) {
+			res.status(404).render("404");
+		});
+		
         this._app.listen(this._port, () => {
             console.log("Listening at http://localhost:" + this._port + "/");
         });
