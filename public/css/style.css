@@ -193,7 +193,7 @@ hr {
 .social-list {
     width: 100%;
     text-align: center;
-    padding: 8px;
+    padding: 24px;
 }
 
 .social {
@@ -202,6 +202,6 @@ hr {
 }
 
 .social i {
-    font-size: 48px;
+    font-size: 40px;
     color: #777;
 }
