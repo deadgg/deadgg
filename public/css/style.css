@@ -3,13 +3,13 @@
 
 nav {
     background-color: #6b466e;
-    border-bottom: 1px solid #6eb4c3;
+    border-bottom: 4px solid #6eb4c3;
     padding: 0 10px;
 }
 
 .sidenav {
     background-color: #6b466e;
-    border-right: 1px solid #6eb4c3;
+    border-right: 4px solid #6eb4c3;
     padding-top: 16px;
     padding-left: 0px;
 }
