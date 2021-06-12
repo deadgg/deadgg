@@ -5,9 +5,13 @@
   "main": "build/index.js",
   "author": "",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "gulp build && start node build/index.js && gulp open"
   },
   "license": "MIT",
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  },
   "devDependencies": {
     "@types/d3": "^4.9.0",
     "@types/dateformat": "^1.0.1",
